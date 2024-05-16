@@ -6,24 +6,14 @@ namespace ConsoleApp105
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Привет! Как вас зовут?");
-            string name = Console.ReadLine();
+            int totalPictures = 52;
+            int picturesPerRow = 3;
 
-            Console.WriteLine($"Приятно познакомиться, {name}! Сколько вам лет?");
-            int age;
+            int fullRows = totalPictures / picturesPerRow;
+            int extraPictures = totalPictures % picturesPerRow;
 
-            while (int.TryParse(Console.ReadLine(), out age) == false)
-            {
-                Console.WriteLine("Пожалуйста, введите корректное число для возраста:");
-            }
-
-            Console.WriteLine("Какой ваш знак зодиака?");
-            string zodiacSign = Console.ReadLine();
-
-            Console.WriteLine("Чем вы занимаетесь?");
-            string occupation = Console.ReadLine();
-
-            Console.WriteLine($"Вас зовут {name}, вам {age} лет, ваш знак зодиака - {zodiacSign}, и вы {occupation}.");
+            Console.WriteLine($"Полностью заполненных рядов: {fullRows}");
+            Console.WriteLine($"Сверх меры картинок: {extraPictures}");
             Console.ReadLine();
         }
     }
