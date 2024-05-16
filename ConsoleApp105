@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp105
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Привет! Как вас зовут?");
+            string name = Console.ReadLine();
+
+            Console.WriteLine($"Приятно познакомиться, {name}! Сколько вам лет?");
+            int age;
+
+            while (int.TryParse(Console.ReadLine(), out age) == false)
+            {
+                Console.WriteLine("Пожалуйста, введите корректное число для возраста:");
+            }
+
+            Console.WriteLine("Какой ваш знак зодиака?");
+            string zodiacSign = Console.ReadLine();
+
+            Console.WriteLine("Чем вы занимаетесь?");
+            string occupation = Console.ReadLine();
+
+            Console.WriteLine($"Вас зовут {name}, вам {age} лет, ваш знак зодиака - {zodiacSign}, и вы {occupation}.");
+            Console.ReadLine();
+        }
+    }
+}
