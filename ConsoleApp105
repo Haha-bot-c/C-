@@ -6,14 +6,18 @@ namespace ConsoleApp105
     {
         static void Main(string[] args)
         {
-            int totalPictures = 52;
-            int picturesPerRow = 3;
+            Console.Write("Введите начальное количество золота: ");
+            int gold = Convert.ToInt32(Console.ReadLine());
 
-            int fullRows = totalPictures / picturesPerRow;
-            int extraPictures = totalPictures % picturesPerRow;
+            int crystalPrice = 10;
 
-            Console.WriteLine($"Полностью заполненных рядов: {fullRows}");
-            Console.WriteLine($"Сверх меры картинок: {extraPictures}");
+            Console.Write($"Цена кристаллов {crystalPrice}. Сколько кристаллов вы хотите купить? ");
+            int crystalsToBuy = Convert.ToInt32(Console.ReadLine());
+
+            int crystalsBought = crystalsToBuy;
+            int remainingGold = gold - crystalsToBuy * crystalPrice;
+
+            Console.WriteLine($"После сделки у вас осталось {remainingGold} золота и {crystalsBought} кристаллов.");
             Console.ReadLine();
         }
     }
