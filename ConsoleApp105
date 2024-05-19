@@ -4,20 +4,24 @@ namespace ConsoleApp105
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.Write("Введите начальное количество золота: ");
-            int gold = Convert.ToInt32(Console.ReadLine());
+            const int MinutesInHour = 60;
 
-            int crystalPrice = 10;
+            int timePerPatientMinutes = 10;
+            int totalWaitingTimeMinutes = 0;
 
-            Console.Write($"Цена кристаллов {crystalPrice}. Сколько кристаллов вы хотите купить? ");
-            int crystalsToBuy = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите кол-во пациентов: ");
 
-            int crystalsBought = crystalsToBuy;
-            int remainingGold = gold - crystalsToBuy * crystalPrice;
+            while(int.TryParse(Console.ReadLine(), out int numberOfPatients))
+            {
+                totalWaitingTimeMinutes = numberOfPatients * timePerPatientMinutes;  
+            }
 
-            Console.WriteLine($"После сделки у вас осталось {remainingGold} золота и {crystalsBought} кристаллов.");
+            int hours = totalWaitingTimeMinutes / MinutesInHour;
+            int minutes = totalWaitingTimeMinutes % MinutesInHour;
+
+            Console.WriteLine($"Вы должны отстоять в очереди {hours} часов и {minutes} минут.");
             Console.ReadLine();
         }
     }
