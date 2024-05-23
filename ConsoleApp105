@@ -19,9 +19,9 @@ namespace ConsoleApp105
             }
     
             totalWaitingTimeMinutes = numberOfPatients * TimePerPatientMinutes;
-            int hours = totalWaitingTimeMinutes / MinutesInHour;
-            int minutes = totalWaitingTimeMinutes % MinutesInHour;
-            Console.WriteLine($"Вы должны отстоять в очереди {hours} часов и {minutes} минут.");
+            int waitingHours = totalWaitingTimeMinutes / MinutesInHour;
+            int waitingMinutes = totalWaitingTimeMinutes % MinutesInHour;
+            Console.WriteLine($"Вы должны отстоять в очереди {waitingHours} часов и {waitingMinutes} минут.");
             Console.ReadLine();
         }
     }
