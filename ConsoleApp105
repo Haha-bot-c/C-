@@ -7,20 +7,20 @@ namespace ConsoleApp105
         static void Main()
         {
             const int MinutesInHour = 60;
+            const int TimePerPatientMinutes = 10;
 
-            int timePerPatientMinutes = 10;
-            int totalWaitingTimeMinutes = 0;
-
+            int totalWaitingTimeMinutes;
+            int numberOfPatients;
             Console.Write("Введите кол-во пациентов: ");
 
-            while(int.TryParse(Console.ReadLine(), out int numberOfPatients))
+            while (int.TryParse(Console.ReadLine(), out  numberOfPatients) == false && numberOfPatients >= 0)
             {
-                totalWaitingTimeMinutes = numberOfPatients * timePerPatientMinutes;  
+                Console.WriteLine("Введите коректные данные");
             }
-
+    
+            totalWaitingTimeMinutes = numberOfPatients * TimePerPatientMinutes;
             int hours = totalWaitingTimeMinutes / MinutesInHour;
             int minutes = totalWaitingTimeMinutes % MinutesInHour;
-
             Console.WriteLine($"Вы должны отстоять в очереди {hours} часов и {minutes} минут.");
             Console.ReadLine();
         }
